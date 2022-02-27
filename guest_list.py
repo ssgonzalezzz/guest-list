@@ -26,9 +26,15 @@ def run():
             system('clear')
             break
         elif value == 3:
+            system('clear')
             read_archive()
         elif value == 1:
+            system('clear')
             create_file()
+        elif value ==2:
+            system('clear')
+            name = input('Nombre a agregar: ')
+            add_guest(name)
         
 
 if __name__ == '__main__':

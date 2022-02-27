@@ -2,9 +2,10 @@ from os import mkdir
 
 def read_archive():
     try:
-        with open('archive/list.txt', 'r') as f:
+        with open('file/list.txt', 'r') as f:
             for line in f:
-                print(line, '\n')
+                print(f'{line}')
+            input('FIN')
     except FileNotFoundError as fnfe:
         input('El archivo no existe. Presione cualquier tecla para continuar')
         return    
@@ -18,3 +19,16 @@ def create_file():
     except FileNotFoundError:
         mkdir('./file')
         create_file()
+
+def add_guest(name):
+    try:
+        with open('./file/list.txt', 'a', encoding='utf-8') as f:
+            f.write(f'{name}\n')
+            f.close()
+    except FileNotFoundError:
+        opt = input('Archivo no existe. Desea crearlo y agregar el nombre?. Y/N')
+        if opt.lower() == 'y':
+            create_file()
+            add_guest(name)
+        else:
+            return
