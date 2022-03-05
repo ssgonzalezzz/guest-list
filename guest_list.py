@@ -10,7 +10,8 @@ def run():
 1. Crear nuevo archivo (borrará la lista anterior).
 2. Agregar un nuevo nombre.
 3. Mostrar lista de invitados.
-4. Salir
+4. Eliminar un invitado
+5. Salir
 
             """
         )
@@ -22,7 +23,7 @@ def run():
             system('clear')
             continue
         
-        if value == 4:
+        if value == 5:
             system('clear')
             break
         elif value == 3:
@@ -35,6 +36,10 @@ def run():
             system('clear')
             name = input('Nombre a agregar: ')
             add_guest(name)
+        elif value ==4:
+            system('clear')
+            name = input('Nombre a eliminar: ')
+            delete_guest(name)
         
 
 if __name__ == '__main__':
