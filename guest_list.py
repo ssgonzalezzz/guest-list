@@ -39,7 +39,7 @@ def run():
         elif value ==4:
             system('clear')
             name = input('Nombre a eliminar: ')
-            delete_guest(name)
+           
         
 
 if __name__ == '__main__':

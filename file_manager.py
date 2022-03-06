@@ -10,6 +10,7 @@ def read_archive():
         input('El archivo no existe. Presione cualquier tecla para continuar')
         return    
 
+
 def create_file():
     ruta = './file/list.txt'
     try:
@@ -19,6 +20,7 @@ def create_file():
     except FileNotFoundError:
         mkdir('./file')
         create_file()
+
 
 def add_guest(name):
     try:
@@ -34,7 +36,8 @@ def add_guest(name):
             return
 
 
-def delete_guest(guest_to_delete):
+def delete_guest(guest_to_delete:str):
+
     """
     Elimina un guest del archivo. Utiliza list comprehensions para lograrlo. BORRA TODAS LAS CONCIDENCIAS
 
@@ -53,6 +56,8 @@ def delete_guest(guest_to_delete):
             for name in new_list:
                 f.write(name)
 
+
+
         # for name in all_guest:
         #     if name.lower() != (guest_to_delete+'\n').lower():
         #         new_list.append(name)
@@ -70,9 +75,6 @@ def delete_guest(guest_to_delete):
         #             print('igual') 
             # print(all_guest)
 
-
-
-        input()
     except Exception as ve:
         print(ve)
         input()
